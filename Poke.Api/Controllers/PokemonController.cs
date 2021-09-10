@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Poke.Api.Models;
 
 namespace Poke.Api.Controllers
 {
@@ -19,15 +20,24 @@ namespace Poke.Api.Controllers
         public async Task<IActionResult> Get(string name)
         {
 
-            return new OkObjectResult("xxx");
+            var response = new PokemonDetailsResponse
+                           {
+                               Name = name
+                           };
+
+            return new OkObjectResult(response);
 
         }
 
         [HttpGet, Route("translated/{name}")]
         public async Task<IActionResult> GetTranslated(string name)
         {
+            var response = new PokemonDetailsResponse
+                           {
+                               Name = name
+            };
 
-            return Ok("translated");
+            return Ok(response);
 
         }
     }

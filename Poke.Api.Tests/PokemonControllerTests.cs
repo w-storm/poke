@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Poke.Api.Controllers;
+using Poke.Api.Models;
 
 namespace Poke.Api.Tests
 {
@@ -26,6 +27,12 @@ namespace Poke.Api.Tests
             ((ObjectResult)result).StatusCode.Should().Be((int)HttpStatusCode.OK);
 
             var objectResult = result as OkObjectResult;
+            objectResult.Should().NotBeNull();
+
+            var pokemon = objectResult.Value as PokemonDetailsResponse;
+
+            pokemon.Should().NotBeNull();
+            pokemon.Name.Should().Be("xxx");
         }
 
         [Test]
@@ -39,6 +46,12 @@ namespace Poke.Api.Tests
             ((ObjectResult)result).StatusCode.Should().Be((int)HttpStatusCode.OK);
 
             var objectResult = result as OkObjectResult;
+            objectResult.Should().NotBeNull();
+
+            var pokemon = objectResult.Value as PokemonDetailsResponse;
+
+            pokemon.Should().NotBeNull();
+            pokemon.Name.Should().Be("xxx");
         }
     }
 }
