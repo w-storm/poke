@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poke.Api", "Poke.Api\Poke.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poke.Models", "Poke.Models\Poke.Models.csproj", "{EF16BC4B-62FE-49F9-8CD6-37F4949B3776}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poke.Api.Tests", "Poke.Api.Tests\Poke.Api.Tests.csproj", "{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EF16BC4B-62FE-49F9-8CD6-37F4949B3776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF16BC4B-62FE-49F9-8CD6-37F4949B3776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF16BC4B-62FE-49F9-8CD6-37F4949B3776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
