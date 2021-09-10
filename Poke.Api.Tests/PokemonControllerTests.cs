@@ -6,21 +6,39 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
 using Poke.Api.Controllers;
-using Poke.Api.Models;
+using Poke.Models;
+using Poke.Services;
 
 namespace Poke.Api.Tests
 {
     [TestFixture]
     public class PokemonControllerTests
     {
+        private Mock<IPokemonService> _mockPokemonService;
 
+        [SetUp]
+        public void Setup()
+        {
+            _mockPokemonService = new Mock<IPokemonService>();
+
+            _mockPokemonService.Setup(i => i.Get(It.Is<string>(p => p == "xxx"))).ReturnsAsync(new PokemonDetails
+                {
+                    Name = "xxx"
+                });
+
+            _mockPokemonService.Setup(i => i.GetTranslated(It.Is<string>(p => p == "xxx"))).ReturnsAsync(new PokemonDetails
+                {
+                    Name = "xxx"
+                });
+        }
 
         [Test]
 
         public async Task Get_Should_Return_Ok()
         {
-            var controller = new PokemonController();
+            var controller = new PokemonController(_mockPokemonService.Object);
 
             var result = await controller.Get("xxx");
 
@@ -29,7 +47,7 @@ namespace Poke.Api.Tests
             var objectResult = result as OkObjectResult;
             objectResult.Should().NotBeNull();
 
-            var pokemon = objectResult.Value as PokemonDetailsResponse;
+            var pokemon = objectResult.Value as PokemonDetails;
 
             pokemon.Should().NotBeNull();
             pokemon.Name.Should().Be("xxx");
@@ -39,7 +57,7 @@ namespace Poke.Api.Tests
 
         public async Task GetTranslated_Should_Return_Ok()
         {
-            var controller = new PokemonController();
+            var controller = new PokemonController(_mockPokemonService.Object);
 
             var result = await controller.GetTranslated("xxx");
 
@@ -48,7 +66,7 @@ namespace Poke.Api.Tests
             var objectResult = result as OkObjectResult;
             objectResult.Should().NotBeNull();
 
-            var pokemon = objectResult.Value as PokemonDetailsResponse;
+            var pokemon = objectResult.Value as PokemonDetails;
 
             pokemon.Should().NotBeNull();
             pokemon.Name.Should().Be("xxx");

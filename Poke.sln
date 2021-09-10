@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poke.Models", "Poke.Models\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poke.Api.Tests", "Poke.Api.Tests\Poke.Api.Tests.csproj", "{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poke.Services", "Poke.Services\Poke.Services.csproj", "{91E78779-740A-438E-A965-BF78C114BE5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFBDF5D4-931A-4880-B39E-49DAEB3BD0D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E78779-740A-438E-A965-BF78C114BE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E78779-740A-438E-A965-BF78C114BE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E78779-740A-438E-A965-BF78C114BE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E78779-740A-438E-A965-BF78C114BE5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

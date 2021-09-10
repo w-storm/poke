@@ -1,12 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Poke.Api.Models;
+using Poke.Services;
 
 namespace Poke.Api.Controllers
 {
@@ -14,31 +8,28 @@ namespace Poke.Api.Controllers
     [ApiController]
     public class PokemonController : ControllerBase
     {
+        private readonly IPokemonService _pokemonService;
 
+        public PokemonController(
+            IPokemonService pokemonService)
+        {
+            _pokemonService = pokemonService;
+        }
 
         [HttpGet, Route("{name}")]
         public async Task<IActionResult> Get(string name)
         {
+            var details = await _pokemonService.Get(name);
 
-            var response = new PokemonDetailsResponse
-                           {
-                               Name = name
-                           };
-
-            return new OkObjectResult(response);
-
+            return new OkObjectResult(details);
         }
 
         [HttpGet, Route("translated/{name}")]
         public async Task<IActionResult> GetTranslated(string name)
         {
-            var response = new PokemonDetailsResponse
-                           {
-                               Name = name
-            };
+            var details = await _pokemonService.GetTranslated(name);
 
-            return Ok(response);
-
+            return new OkObjectResult(details);
         }
     }
 }

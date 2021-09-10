@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="RestSharp" Version="106.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Poke.Models\Poke.Models.csproj" />
+    <ProjectReference Include="..\Poke.Services\Poke.Services.csproj" />
   </ItemGroup>
 
 

@@ -1,6 +1,6 @@
-﻿namespace Poke.Api.Models
+﻿namespace Poke.Models
 {
-    public class PokemonDetailsResponse
+    public class PokemonDetails
     {
         public string Name { get; set; }
         public string Description { get; set; }
