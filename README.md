@@ -6,6 +6,7 @@ This project demonostrates use and mix of third party RestApis in an .Net Web Ap
 # Structure
 
 **Poke.Api** is the web api project with one controller exposing two GET endpoints as per requirements. It is configured for DI but project exception handling is NOT setup to save time. In production any exceptions should be intercepted, logged and a message returned to the user without internal details.
+*External services urls specified in the appsettings file*
 
 **Poke.Api.Tests** is a set of tests for the API controller
 **Poke.Models** a library of shared models
@@ -18,9 +19,12 @@ This project demonostrates use and mix of third party RestApis in an .Net Web Ap
 **Poke.Services.Tests** a set of tests for all key classes and extensions. The tests for the API clients simplified but gives an idea how they could be tested.
 
 
+
 ## Docker Image
 
-If you wish to run it from Docker, open Powershell and pull the image using:
+If you wish to run it from Docker, google and Docker for Windows (or your OS) from https://docs.docker.com/desktop/windows/install/
+
+once installed, open Powershell (or terminal) and pull the image using:
 *docker pull westernstorm/pokeapi*
 once downloaded, run *docker run -p 4200:80 0a03136024b3*
 open url http://localhost:4200/pokemon/mewtwo
