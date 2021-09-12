@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="RestSharp" Version="106.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Poke.Models\Poke.Models.csproj" />
   </ItemGroup>
 

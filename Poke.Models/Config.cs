@@ -31,9 +31,9 @@ namespace Poke.Models
 
     public class ConfigBase : IConfig
     {
-        public virtual string ExternalServicesPokeApiUrl { get; }
-        public virtual int ExternalServicesPokeApiTimeoutSeconds { get; }
-        public virtual string ExternalServicesFunTranslationsUrl { get; }
-        public virtual int ExternalServicesFunTranslationsTimeoutSeconds { get; }
+        public virtual string ExternalServicesPokeApiUrl { get; set; }
+        public virtual int ExternalServicesPokeApiTimeoutSeconds { get; set; }
+        public virtual string ExternalServicesFunTranslationsUrl { get; set; }
+        public virtual int ExternalServicesFunTranslationsTimeoutSeconds { get; set; }
     }
 }

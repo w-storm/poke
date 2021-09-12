@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +33,7 @@ namespace Poke.Api.Tests
 
         [Test]
 
-        public async Task Get_Should_Return_Ok()
+        public async Task Get_Should_Return_Ok_With_PokemonDetails()
         {
             var controller = new PokemonController(_mockPokemonService.Object);
 
@@ -55,7 +52,7 @@ namespace Poke.Api.Tests
 
         [Test]
 
-        public async Task GetTranslated_Should_Return_Ok()
+        public async Task GetTranslated_Should_Return_Ok_With_PokemonDetails()
         {
             var controller = new PokemonController(_mockPokemonService.Object);
 
